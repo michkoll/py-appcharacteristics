@@ -29,33 +29,14 @@ filterPE = True
 filterCE = True
 
 # CHANGE THIS
-filterExclude =     {
-    "HKLM\COMPONENTS\CanonicalData" : 0,
-    "HKLM\COMPONENTS\DerivedData" : 0,
-    "HKLM\SOFTWARE\Classes" : 0,
-    "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion" : 0,
-    "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" : 0,
-    "HKLM\SOFTWARE\WOW6432Node" : 0,
-    "HKLM\SOFTWARE\Microsoft\.NETFramework" : 0,
-    "HKLM\SOFTWARE\Microsoft\Windows\EnterpriseResourceManager" : 0,
-    "HKLM\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId" : 0,
-    "HKLM\SOFTWARE\Microsoft\SystemSettings\SettingId\SystemSettings" : 0,
-    "HKLM\SOFTWARE\Microsoft" : 0,
-    "HKLM\COMPONENTS\Drivers\\amd64" : 0,
-    "HK" : 0
-    }
-
+filterExclude = {
+    # "excludeMe" : 0,
+    # "andMe" : 0
+}
 # CHANGE THIS
-filterInclude = {
-    "Nessus" : 0,
-    "Tenable" : 0,
-    "8D6A097F-3FB4-4543-9015-887DAD0FBAF0" : 0,
-    "1516f2d5ff564b34a2496ea81588ab52" : 0,
-    "F790A6D84BF33454095188D7DAF0AB0F" : 0,
-    "nessus-service" : 0,
-    "nessusd" : 0,
-    "nessuscli" : 0,
-    "6ae7.msi" : 0
+filterExclude = {
+    # "includeMe" : 0,
+    # "andMe" : 0
 }
 
 class Mode(Enum):
@@ -157,12 +138,12 @@ def makePE(filter = False):
             peValueEntries = {}
 
             peStats = {
-                "keysadded": {"Original": 0, "peorig": 0, "pefiltered" : 0, "ceorig" : 0},
-                "keysdeleted": {"Original": 0, "peorig": 0, "pefiltered" : 0, "ceorig" : 0},
-                "valuesadded": {"Original": 0, "peorig": 0, "pefiltered" : 0, "ceorig" : 0},
-                "valuesdeleted": {"Original": 0, "peorig": 0, "pefiltered" : 0, "ceorig" : 0},
-                "valuesmodified": {"Original": 0, "peorig": 0, "pefiltered" : 0, "ceorig" : 0},
-                "total": {"Original": 0, "peorig": 0, "pefiltered" : 0, "ceorig" : 0},
+                "keysadded": {"Original": 0, "peorig": 0, "ceorig" : 0},
+                "keysdeleted": {"Original": 0, "peorig": 0, "ceorig" : 0},
+                "valuesadded": {"Original": 0, "peorig": 0, "ceorig" : 0},
+                "valuesdeleted": {"Original": 0, "peorig": 0, "ceorig" : 0},
+                "valuesmodified": {"Original": 0, "peorig": 0, "ceorig" : 0},
+                "total": {"Original": 0, "peorig": 0, "ceorig" : 0},
             }
 
             # inital action status
