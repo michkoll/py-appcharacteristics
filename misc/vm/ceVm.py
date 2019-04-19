@@ -45,7 +45,7 @@ for meFile in meFilesApp:
 # als Subtrahend betrachtet, da diese eine mögliche charakterisitsche Spur nichtig machen.
 for meKey, meValue in meEntries.items():
     # Falls aktuelles ME-File "noise", CE-Erstellung überspringen
-    if meKey == "noise":
+    if meKey in ("noise"):
         continue
     # Einträge aus aktuellem ME-File in Set schreiben
     ceEntries = set(meValue)
@@ -53,6 +53,9 @@ for meKey, meValue in meEntries.items():
     for meKeySub, meValueSub in meEntriesSub.items():
         # Verhindern, zB a.pe von a.pe subtrahiert wird.
         if meKey == meKeySub:
+            continue
+        # Spuren der Installation zur Berechnung der timed characteristic evidence nicht abziehen
+        if meKeySub == "001-install":
             continue
         # Sets subtrahieren -> ceEntries enthält verminderte Spurenmenge
         ceEntries = ceEntries - set(meValueSub)
