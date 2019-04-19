@@ -1,3 +1,8 @@
+# ---- regEvidence ----
+# Author: michkoll
+# URL: https://github.com/michkoll/py-appcharacteristics/blob/master/regEvidence.py
+# ----------------------
+
 import argparse
 import glob
 import json

@@ -1,3 +1,9 @@
+# ---- ceToLatex ----
+# Author: michkoll
+# URL: https://github.com/michkoll/py-appcharacteristics/blob/master/ceToLatex.py
+# ----------------------
+
+
 # Kommandozeilenargumente einlesen und parsen
 import argparse
 import os

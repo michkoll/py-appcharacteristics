@@ -1,3 +1,8 @@
+# ---- regCeToLatex ----
+# Author: michkoll
+# URL: https://github.com/michkoll/py-appcharacteristics/blob/master/regCeToLatex.py
+# ----------------------
+
 # Kommandozeilenargumente einlesen und parsen
 import argparse
 import glob
